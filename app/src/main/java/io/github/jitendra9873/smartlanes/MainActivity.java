@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import java.lang.ref.WeakReference;
 
 import io.github.jitendra9873.smartlanes.fragments.HomeFragment;
+import io.github.jitendra9873.smartlanes.fragments.TransactionsFragment;
 
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_ID;
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_LOGGED_IN_STATE;
@@ -79,8 +80,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_menu_home:
                 fragment = new HomeFragment();
                 break;
+            case R.id.nav_menu_rec_transactions:
+                fragment = new TransactionsFragment();
+                break;
         }
-
         if(fragment != null){
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
