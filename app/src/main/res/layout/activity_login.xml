@@ -42,7 +42,7 @@
                 android:fontFamily="casual"
                 android:layout_below="@+id/logo"
                 android:id="@+id/t1"
-                android:text="Hi there! Want to give feedbacks?"/>
+                android:text="Hi there! Welcome to SmartLane?"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
                 android:textStyle="bold"
 
                 android:layout_below="@+id/t1"
-                android:text="Yes? Login to continue"/>
+                android:text="Please, Login to continue"/>
 
             <!-- Email Label -->
             <android.support.design.widget.TextInputLayout

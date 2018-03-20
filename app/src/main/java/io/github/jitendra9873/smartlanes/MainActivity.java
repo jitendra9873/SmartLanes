@@ -24,7 +24,7 @@ import io.github.jitendra9873.smartlanes.fragments.HomeFragment;
 import io.github.jitendra9873.smartlanes.fragments.TransactionsFragment;
 import io.github.jitendra9873.smartlanes.fragments.TransmitterFragment;
 
-import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_ID;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_PREF;
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_LOGGED_IN_STATE;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -95,6 +95,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_menu_nearby:
                 fragment = new TransmitterFragment();
                 break;
+            case R.id.nav_menu_logout:
+                SharedPreferences prefs = getSharedPreferences(SP_LOGIN_PREF, Context.MODE_PRIVATE);
+                prefs.edit().putBoolean(SP_LOGIN_LOGGED_IN_STATE, false).apply();
+                this.recreate();
+                break;
         }
         if(fragment != null){
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -129,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         protected Void doInBackground(Void... params) {
-            SharedPreferences prefs = wrContext.get().getSharedPreferences(SP_LOGIN_ID, Context.MODE_PRIVATE);
+            SharedPreferences prefs = wrContext.get().getSharedPreferences(SP_LOGIN_PREF, Context.MODE_PRIVATE);
             boolean isLoggedIn = prefs.getBoolean(SP_LOGIN_LOGGED_IN_STATE, false);
 
             if(!isLoggedIn){

@@ -22,9 +22,11 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity {
 
     // Login Preferences
-    public static final String SP_LOGIN_ID = "LoginPreferences";
+    public static final String SP_LOGIN_PREF = "LoginPreferences";
     public static final String SP_LOGIN_LOGGED_IN_STATE = "LoggedInState";
     public static final String SP_LOGIN_USER_NAME = "Username";
+    public static final String SP_LOGIN_AADHAR = "aadhar";
+    public static final String SP_LOGIN_LICENCE = "licence";
 
     // Lock to avoid deadlock
     private static boolean lockLogin = false;
@@ -139,7 +141,10 @@ public class LoginActivity extends AppCompatActivity {
 
         //String login pass (Dummy Data)
         String[][] loginData = {
-                {"guest@guest.com", "guest123"}
+                {"dcunha.cyprien@gmail.com", "pass@123", "564356728976", "444c3443-4146-3439-3433"},
+                {"jitendrakumhar@gmail.com", "qwerty@123", "763456728976", "4b413139-4551-3133-3136"},
+                {"edwardgonsalves24@gmail.com", "pass@123", "093456728976", "4d483031-4142-3132-3334"},
+                {"rchta26@gmail.com", "pass@123", "432756728976", "524a3237-5441-3133-3337"}
         };
 
         signInTask(Activity activity, final String username, final String password,
@@ -181,11 +186,13 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer response){
             if(response != -1){
-                SharedPreferences prefs = wrContext.get().getSharedPreferences(SP_LOGIN_ID, Context.MODE_PRIVATE);
+                SharedPreferences prefs = wrContext.get().getSharedPreferences(SP_LOGIN_PREF, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
 
                 editor.putBoolean(SP_LOGIN_LOGGED_IN_STATE, true);
                 editor.putString(SP_LOGIN_USER_NAME, username);
+                editor.putString(SP_LOGIN_AADHAR, loginData[response][2]);
+                editor.putString(SP_LOGIN_LICENCE, loginData[response][3]);
 
                 editor.apply();
 
