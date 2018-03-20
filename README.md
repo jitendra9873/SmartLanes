@@ -49,9 +49,13 @@ Transactions | Account | Transmitter
 
 ### Screenshots - Web
 
-Dashboard | Radar
-:--------:|:--------:
-![](art/dash.gif) | ![](art/radar.gif)
+Dashboard 
+:--------:
+![](art/dash.gif)
+
+Radar 
+:--------:
+![](art/radar.gif)
 
 
 ### Team
