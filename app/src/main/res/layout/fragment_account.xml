@@ -224,6 +224,7 @@
                         <RadioButton
                             android:id="@+id/vt_rb1"
                             android:layout_column="4"
+                            android:checked="true"
                             android:layout_gravity="end"/>
 
                     </TableRow>
@@ -249,6 +250,29 @@
 
                     </TableRow>
 
+                    <TableRow
+                        android:id="@+id/table_hidden_row"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_column="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="Car"/>
+                        <TextView
+                            android:layout_column="2"
+                            android:layout_gravity="center_vertical"
+                            android:text="Honda City"/>
+                        <TextView
+                            android:layout_column="3"
+                            android:layout_gravity="center_vertical"
+                            android:text="MH-24-EK-8468"/>
+
+                        <RadioButton
+                            android:id="@+id/vt_rb3"
+                            android:layout_column="4"
+                            android:layout_gravity="end"/>
+
+                    </TableRow>
+
                 </TableLayout>
 
                 <Button
@@ -257,7 +281,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:layout_gravity="end"
-                    android:id="@+id/login_sign_in"
+                    android:id="@+id/add_vehicle_button"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:textStyle="bold"
                     android:text="Add Vehicle"/>
