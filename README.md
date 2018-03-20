@@ -20,7 +20,7 @@ SmartLane is a Bluetooth beacon based solution for efficiently doing transaction
 * Bluetooth Beacon (EddyStone) based authentication
 * Linkage between Aadhar card, licence Id and vehicles plate number
 * SHA256 encryption/decryption
-* Security - Isolation of server from users
+* Security - Isolation of server from direct access by users
 * Lesser delay at toll plaza
 * Internet independent
 * Notification based on Geo-location
@@ -46,6 +46,13 @@ Login | Homepage | Navigation
 Transactions | Account | Transmitter
 :-------:|:--------:|:--------:
 ![](art/art4.png)  |  ![](art/art5.png) |  ![](art/art6.png)
+
+### Screenshots - Web
+
+Dashboard | Radar
+:--------:|:--------:
+![](art/dash.gif) | ![](art/radar.gif)
+
 
 ### Team
 
