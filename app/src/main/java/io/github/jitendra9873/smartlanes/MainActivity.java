@@ -22,6 +22,7 @@ import java.lang.ref.WeakReference;
 import io.github.jitendra9873.smartlanes.fragments.AccountFragment;
 import io.github.jitendra9873.smartlanes.fragments.HomeFragment;
 import io.github.jitendra9873.smartlanes.fragments.TransactionsFragment;
+import io.github.jitendra9873.smartlanes.fragments.TransmitterFragment;
 
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_ID;
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_LOGGED_IN_STATE;
@@ -90,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_menu_profile:
                 fragment = new AccountFragment();
+                break;
+            case R.id.nav_menu_nearby:
+                fragment = new TransmitterFragment();
                 break;
         }
         if(fragment != null){
