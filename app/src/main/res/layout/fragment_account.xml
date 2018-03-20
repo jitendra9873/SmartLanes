@@ -219,7 +219,7 @@
                         <TextView
                             android:layout_column="3"
                             android:layout_gravity="center_vertical"
-                            android:text="MH-01-SD-3456"/>
+                            android:text="MH-04-AK-1298"/>
 
                         <RadioButton
                             android:id="@+id/vt_rb1"
@@ -241,7 +241,7 @@
                         <TextView
                             android:layout_column="3"
                             android:layout_gravity="center_vertical"
-                            android:text="MH-23-AB-7532"/>
+                            android:text="RJ-27-TA-1337"/>
 
                         <RadioButton
                             android:id="@+id/vt_rb2"

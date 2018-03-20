@@ -44,8 +44,19 @@ public class TransactionsFragment extends Fragment {
     }
 
     private void prepareDummyTransactions() {
+        String[] name={"Jaipur toll","Naughar toll","Jaipur toll","Diya toll","Pune toll",
+                "Bandra toll","Nh toll","Vaia toll", "Diya toll","Pune toll"};
+        String[] licence={"MH-04-AK-1298","RJ-27-TA-1337","RJ-27-TA-1337","MH-04-AK-1298",
+                "MH-04-AK-1298","RJ-27-TA-1337","RJ-27-TA-1337", "MH-04-AK-1298","RJ-27-TA-1337",
+                "MH-04-AK-1298","RJ-27-TA-1337"};
+        double[] charge={17.8,25.7,25.7,17.8,17.8,25.7,17.8,17.8,17.8,25.7,17.8,25.7};
+        long[] ts={1521580245851L, 1520580245851L, 1519580245851L,
+                1515580245851L,1514580245851L,1510580245851L,1509580245851L,1508580245851L,
+                1507580245851L,1506580245851L};
+
+
         for(int i=0; i<10; i++){
-            Transaction t = new Transaction(1, "Jaipur Toll", "MH-04-AK-1298", 17.8, new Date());
+            Transaction t = new Transaction(i+1, name[i], licence[i], charge[i], new Date(ts[i]));
             adapter.addTransaction(t);
         }
     }

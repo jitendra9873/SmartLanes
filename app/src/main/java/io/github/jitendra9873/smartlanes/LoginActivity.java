@@ -27,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     public static final String SP_LOGIN_USER_NAME = "Username";
     public static final String SP_LOGIN_AADHAR = "aadhar";
     public static final String SP_LOGIN_LICENCE = "licence";
+    public static final String SP_LOGIN_BALANCE = "balance";
+    public static final String SP_LOGIN_NAME = "name";
 
     // Lock to avoid deadlock
     private static boolean lockLogin = false;
@@ -141,10 +143,10 @@ public class LoginActivity extends AppCompatActivity {
 
         //String login pass (Dummy Data)
         String[][] loginData = {
-                {"dcunha.cyprien@gmail.com", "pass@123", "564356728976", "444c3443-4146-3439-3433"},
-                {"jitendrakumhar@gmail.com", "qwerty@123", "763456728976", "4b413139-4551-3133-3136"},
-                {"edwardgonsalves24@gmail.com", "pass@123", "093456728976", "4d483031-4142-3132-3334"},
-                {"rchta26@gmail.com", "pass@123", "432756728976", "524a3237-5441-3133-3337"}
+                {"dcunha.cyprien@gmail.com", "pass@123", "564356728976", "444c3443-4146-3439-3433", "1223.32", "Cyprien Dcunha"},
+                {"jitendrakumhar@gmail.com", "qwerty@123", "763456728976", "4b413139-4551-3133-3136", "312.42", "Jitendra Kumhar"},
+                {"edwardgonsalves24@gmail.com", "pass@123", "093456728976", "4d483031-4142-3132-3334", "3221.22", "Edward Gonsalves"},
+                {"rchta26@gmail.com", "pass@123", "432756728976", "524a3237-5441-3133-3337", "21312", "Ruchita Parmar"}
         };
 
         signInTask(Activity activity, final String username, final String password,
@@ -193,6 +195,8 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString(SP_LOGIN_USER_NAME, username);
                 editor.putString(SP_LOGIN_AADHAR, loginData[response][2]);
                 editor.putString(SP_LOGIN_LICENCE, loginData[response][3]);
+                editor.putFloat(SP_LOGIN_BALANCE, Float.valueOf(loginData[response][4]));
+                editor.putString(SP_LOGIN_NAME, loginData[response][5]);
 
                 editor.apply();
 

@@ -16,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
@@ -24,8 +26,10 @@ import io.github.jitendra9873.smartlanes.fragments.HomeFragment;
 import io.github.jitendra9873.smartlanes.fragments.TransactionsFragment;
 import io.github.jitendra9873.smartlanes.fragments.TransmitterFragment;
 
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_NAME;
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_PREF;
 import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_LOGGED_IN_STATE;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_USER_NAME;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -50,8 +54,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        SharedPreferences prefs = getSharedPreferences(SP_LOGIN_PREF, Context.MODE_PRIVATE);
+        String name = prefs.getString(SP_LOGIN_NAME, "Cyprien Dcunha");
+        String email = prefs.getString(SP_LOGIN_USER_NAME, "dcunha.cyprien@gmail.com");
+
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View header = navigationView.getHeaderView(0);
+
+        TextView nameDrawTV = header.findViewById(R.id.nav_header_name);
+        TextView usernameDrawTV = header.findViewById(R.id.nav_header_username);
+
+        nameDrawTV.setText(name);
+        usernameDrawTV.setText(email);
 
         navigationView.getMenu().getItem(0).setChecked(true);
 

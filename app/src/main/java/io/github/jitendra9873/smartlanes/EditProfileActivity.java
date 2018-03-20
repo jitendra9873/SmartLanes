@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,6 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_AADHAR;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_PREF;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_USER_NAME;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -30,6 +33,13 @@ public class EditProfileActivity extends AppCompatActivity {
         EditText usernameET = findViewById(R.id.edit_profile_username);
         EditText aadHarET = findViewById(R.id.edit_profile_aadhar);
         EditText licenceET = findViewById(R.id.edit_profile_licence);
+
+        SharedPreferences prefs = getSharedPreferences(SP_LOGIN_PREF, Context.MODE_PRIVATE);
+        String email = prefs.getString(SP_LOGIN_USER_NAME, "dcunha.cyprien@gmail.com");
+        String aadharNo = prefs.getString(SP_LOGIN_AADHAR, "564356728976");
+
+        usernameET.setText(email);
+        aadHarET.setText(aadharNo);
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Verifying");

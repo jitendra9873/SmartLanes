@@ -4,8 +4,10 @@ package io.github.jitendra9873.smartlanes.fragments;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,6 +31,13 @@ import android.widget.TextView;
 import io.github.jitendra9873.smartlanes.EditProfileActivity;
 import io.github.jitendra9873.smartlanes.R;
 
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_AADHAR;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_BALANCE;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_LICENCE;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_NAME;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_PREF;
+import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_USER_NAME;
+
 public class AccountFragment extends Fragment {
 
     @Override
@@ -48,6 +57,17 @@ public class AccountFragment extends Fragment {
         TextView balanceTV = view.findViewById(R.id.account_balance);
         TextView licenceIdTV = view.findViewById(R.id.account_licence_id);
         TextView licenceExpTV = view.findViewById(R.id.account_licence_expiry);
+
+        SharedPreferences prefs = getContext().getSharedPreferences(SP_LOGIN_PREF, Context.MODE_PRIVATE);
+        String name = prefs.getString(SP_LOGIN_NAME, "Cyprien Dcunha");
+        String balance = "₹ " + prefs.getFloat(SP_LOGIN_BALANCE, 0.0f);
+        String email = prefs.getString(SP_LOGIN_USER_NAME, "dcunha.cyprien@gmail.com");
+        String aadharNo = prefs.getString(SP_LOGIN_AADHAR, "564356728976");
+
+        nameTV.setText(name);
+        balanceTV.setText(balance);
+        emailTV.setText(email);
+        aadharnoTV.setText(aadharNo);
 
         final RadioButton button1 = view.findViewById(R.id.vt_rb1);
         final RadioButton button2 = view.findViewById(R.id.vt_rb2);
