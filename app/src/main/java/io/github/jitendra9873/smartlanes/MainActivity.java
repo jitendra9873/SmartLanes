@@ -29,6 +29,7 @@ import static io.github.jitendra9873.smartlanes.LoginActivity.SP_LOGIN_LOGGED_IN
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
+    NavigationView navigationView;
 
 
     @Override
@@ -48,8 +49,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.getMenu().getItem(0).setChecked(true);
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_frame, new HomeFragment());
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void displaySelectedScreen(int itemId) {
         android.support.v4.app.Fragment fragment = null;
+        navigationView.setCheckedItem(itemId);
 
         switch (itemId){
             case R.id.nav_menu_home:
