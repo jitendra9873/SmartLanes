@@ -19,6 +19,7 @@ import android.view.MenuItem;
 
 import java.lang.ref.WeakReference;
 
+import io.github.jitendra9873.smartlanes.fragments.AccountFragment;
 import io.github.jitendra9873.smartlanes.fragments.HomeFragment;
 import io.github.jitendra9873.smartlanes.fragments.TransactionsFragment;
 
@@ -82,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_menu_rec_transactions:
                 fragment = new TransactionsFragment();
+                break;
+            case R.id.nav_menu_profile:
+                fragment = new AccountFragment();
                 break;
         }
         if(fragment != null){
