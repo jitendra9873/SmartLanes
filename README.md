@@ -12,6 +12,13 @@
 <td>
 SmartLane is a Bluetooth beacon based solution for efficiently doing transactions and analysis of vehicle traffic. Since, all mobile devices already have BLE features, the project can be implemented very feasibly. Very little changes have to be made to the existing architecture of toll plaza.
 </td>
+  
+</tr>
+<tr>
+<td>
+National highways cover just 2% of the total road network in the country, but account for 40% of total traffic, and therefore, its contribution to the Indian economy is significant. There are about 394 Toll Plazas at various points on national highways.
+The use of this system eliminates the cost of labourer salary and cuts down costs by about 47crores annually. It does not require high maintenance hardware like cameras with low light resolution for licence plate recognition which further cuts down the cost.
+</td>
 </tr>
 </table>
 
@@ -22,9 +29,9 @@ SmartLane is a Bluetooth beacon based solution for efficiently doing transaction
 * SHA256 encryption/decryption
 * Security - Isolation of server from direct access by users
 * Lesser delay at toll plaza
-* Internet independent
+* No Internet required
 * Notification based on Geo-location
-* No special hardware requirement, thus more feasible
+* No special hardware requirement, thus more feasible (No modification to vehicle)
 * 100% payment guarantee
 * Automated analytics of traffic demographics
 * Can be made fully automated
@@ -53,7 +60,7 @@ Dashboard
 :--------:
 ![](art/dash.gif)
 
-Radar 
+Bluetooth Radar 
 :--------:
 ![](art/radar.gif)
 
