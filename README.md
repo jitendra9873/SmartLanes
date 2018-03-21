@@ -16,7 +16,7 @@ SmartLane is a Bluetooth beacon based solution for efficiently doing transaction
 </tr>
 <tr>
 <td>
-National highways cover just 2% of the total road network in the country, but account for 40% of total traffic, and therefore, its contribution to the Indian economy is significant. There are about 394 Toll Plazas at various points on national highways.
+National highways cover just 2% of the total road network in the country, but account for 40% of total traffic, and therefore, their contribution to the Indian economy is significant. There are about 394 Toll Plazas at various points on national highways.
 The use of this system eliminates the cost of labourer salary and cuts down costs by about 47crores annually. It does not require high maintenance hardware like cameras with low light resolution for licence plate recognition which further cuts down the cost.
 </td>
 </tr>
