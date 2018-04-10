@@ -24,7 +24,11 @@ The use of this system eliminates the cost of labourer salary and cuts down cost
 
 Video
 :--------:
-[![IMAGE ALT TEXT HERE](art/youtube.jpg)](https://www.youtube.com/watch?v=ih314-rSN4E)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=ih314-rSN4E">
+    <img src="art/youtube.jpg" width="50%">
+  </a>
+</p>
 
 ### Main features
 
