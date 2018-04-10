@@ -22,6 +22,10 @@ The use of this system eliminates the cost of labourer salary and cuts down cost
 </tr>
 </table>
 
+Video
+:--------:
+[![IMAGE ALT TEXT HERE](art/youtube.jpg)](https://www.youtube.com/watch?v=ih314-rSN4E)
+
 ### Main features
 
 * Bluetooth Beacon (EddyStone) based authentication
